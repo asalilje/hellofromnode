@@ -4,6 +4,7 @@ metadata:
   name: hellofromnode
   labels:
     app: hellofromnode
+    version: 1
 spec:
   type: NodePort
   ports:
@@ -17,8 +18,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hellofromnode
+  labels:
+    version: 1
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -34,7 +37,7 @@ spec:
     spec:
       containers:
       - name: hellofromnode
-        image: asalilje/hellofromnode:latest
+        image: asalilje/hellofromnode:0.0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
