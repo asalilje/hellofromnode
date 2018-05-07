@@ -1,9 +1,21 @@
 const express = require('express');
 let app = express();
+const http = require('http');
+
+
+const on = () => {
+  http.get('http://localhost:3200/on');
+};
+
+const off = () => {
+  http.get('http://localhost:3200/off');
+}
 
 app.get("/", (req, res) =>
 {
+  on();
   res.status(200).send("Hello world from Node on a Raspi!");
+  setTimeout(() => off(), 1000);
 });
 
 app.listen(3000, () => {
