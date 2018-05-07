@@ -14,6 +14,7 @@ const off = () => {
 app.get("/", (req, res) =>
 {
   on();
+  console.log("Getting a request");
   res.status(200).send("Hello world from Node on a Raspi!");
   setTimeout(() => off(), 1000);
 });
