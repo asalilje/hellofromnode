@@ -4,7 +4,6 @@ metadata:
   name: hellofromnode
   labels:
     app: hellofromnode
-    version: 1
 spec:
   type: NodePort
   ports:
@@ -18,8 +17,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hellofromnode
-  labels:
-    version: 1
 spec:
   replicas: 3
   strategy:
