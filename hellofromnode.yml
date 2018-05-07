@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: hellofromnode
-        image: asalilje/hellofromnode:0.0.1
+        image: asalilje/hellofromnode:0.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
